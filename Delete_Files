@@ -1,0 +1,22 @@
+'''
+    Remove all files with a particular extension using the glob library
+'''
+import glob
+import os
+
+# Input extension to remove
+target_extension = ".png"
+
+# Input directory from which all files with the target_extension will be removed
+directory = r'C:/Users/Christopher.Colomier/Downloads/'
+
+#Build path with the indicated directory and extension
+path = '{0}*{1}'.format(directory, target_extension)
+
+#Find all files in the chosen directory with the targeted extension
+files = glob.glob(path)
+
+#Remove located files
+for file in files:
+    print("Removing ", file)
+    os.remove(file)
